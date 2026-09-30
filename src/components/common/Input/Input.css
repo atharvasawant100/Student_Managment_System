@@ -1,0 +1,54 @@
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+}
+
+.field__label {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-h);
+}
+
+.field__control {
+  width: 100%;
+  padding: 10px 12px;
+  font-family: inherit;
+  font-size: 15px;
+  color: var(--text-h);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.field__control::placeholder {
+  color: var(--text);
+  opacity: 0.7;
+}
+
+.field__control:focus-visible {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-bg);
+}
+
+.field--invalid .field__control {
+  border-color: var(--danger);
+}
+
+.field__hint,
+.field__error {
+  font-size: 13px;
+}
+
+.field__hint {
+  color: var(--text);
+}
+
+.field__error {
+  color: var(--danger);
+}
