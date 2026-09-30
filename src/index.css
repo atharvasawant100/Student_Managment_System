@@ -4,14 +4,28 @@
   --bg: #fff;
   --border: #e5e4e7;
   --code-bg: #f4f3ec;
-  --accent: #aa3bff;
-  --accent-bg: rgba(170, 59, 255, 0.1);
-  --accent-border: rgba(170, 59, 255, 0.5);
-  --accent-strong: #8b2fd0;
-  --social-bg: rgba(244, 243, 236, 0.5);
+  --accent: #2563eb;
+  --accent-bg: rgba(37, 99, 235, 0.08);
+  --accent-border: rgba(37, 99, 235, 0.35);
+  --accent-strong: #1d4ed8;
+  --social-bg: rgba(15, 23, 42, 0.04);
   --surface: #ffffff;
-  --surface-muted: #f7f6fa;
-  --danger: #d92d20;
+  --surface-muted: #f8fafc;
+  --content-bg: #f7f8fa;
+  --sidebar-width: 264px;
+  --header-height: 72px;
+  --danger: #ef4444;
+  --success: #16a34a;
+  --success-bg: rgba(22, 163, 74, 0.12);
+  --warning: #d97706;
+  --warning-bg: rgba(217, 119, 6, 0.12);
+  --info: #2563eb;
+  --info-bg: rgba(37, 99, 235, 0.1);
+  --indigo: #6366f1;
+  --indigo-bg: rgba(99, 102, 241, 0.12);
+  --hero-bg: linear-gradient(100deg, #0b1530 0%, #17295c 55%, #1e3f86 100%);
+  --hero-text: #ffffff;
+  --hero-muted: rgba(226, 232, 255, 0.78);
   --shadow:
     rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
   --shadow-soft:
@@ -21,8 +35,8 @@
   --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
   --mono: ui-monospace, Consolas, monospace;
 
-  font: 18px/145% var(--sans);
-  letter-spacing: 0.18px;
+  font: 15px/1.55 var(--sans);
+  letter-spacing: 0.1px;
   color-scheme: light dark;
   color: var(--text);
   background: var(--bg);
@@ -32,7 +46,7 @@
   -moz-osx-font-smoothing: grayscale;
 
   @media (max-width: 1024px) {
-    font-size: 16px;
+    font-size: 14px;
   }
 }
 
@@ -43,14 +57,24 @@
     --bg: #16171d;
     --border: #2e303a;
     --code-bg: #1f2028;
-    --accent: #c084fc;
-    --accent-bg: rgba(192, 132, 252, 0.15);
-    --accent-border: rgba(192, 132, 252, 0.5);
-    --accent-strong: #a855f7;
-    --social-bg: rgba(47, 48, 58, 0.5);
+    --accent: #60a5fa;
+    --accent-bg: rgba(96, 165, 250, 0.14);
+    --accent-border: rgba(96, 165, 250, 0.45);
+    --accent-strong: #3b82f6;
+    --social-bg: rgba(148, 163, 184, 0.12);
     --surface: #1c1d24;
     --surface-muted: #21222b;
+    --content-bg: #131418;
     --danger: #f04438;
+    --success: #4ade80;
+    --success-bg: rgba(74, 222, 128, 0.14);
+    --warning: #fbbf24;
+    --warning-bg: rgba(251, 191, 36, 0.14);
+    --info: #60a5fa;
+    --info-bg: rgba(96, 165, 250, 0.14);
+    --indigo: #818cf8;
+    --indigo-bg: rgba(129, 140, 248, 0.16);
+    --hero-bg: linear-gradient(100deg, #0a1024 0%, #16224a 55%, #1d3568 100%);
     --shadow:
       rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
     --shadow-soft: rgba(0, 0, 0, 0.35) 0 1px 2px, rgba(0, 0, 0, 0.25) 0 8px 24px;
@@ -82,30 +106,30 @@ body {
 }
 
 h1,
-h2 {
+h2,
+h3 {
   font-family: var(--heading);
-  font-weight: 500;
+  font-weight: 600;
   color: var(--text-h);
 }
 
 h1 {
-  font-size: 56px;
-  letter-spacing: -1.68px;
-  margin: 32px 0;
-  @media (max-width: 1024px) {
-    font-size: 36px;
-    margin: 20px 0;
-  }
-}
-h2 {
   font-size: 24px;
-  line-height: 118%;
-  letter-spacing: -0.24px;
-  margin: 0 0 8px;
-  @media (max-width: 1024px) {
-    font-size: 20px;
-  }
+  letter-spacing: -0.5px;
+  margin: 0;
 }
+
+h2 {
+  font-size: 19px;
+  letter-spacing: -0.3px;
+  margin: 0;
+}
+
+h3 {
+  font-size: 15px;
+  margin: 0;
+}
+
 p {
   margin: 0;
 }
@@ -119,7 +143,7 @@ code,
 }
 
 code {
-  font-size: 15px;
+  font-size: 14px;
   line-height: 135%;
   padding: 4px 8px;
   background: var(--code-bg);

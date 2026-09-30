@@ -4,9 +4,20 @@ import './Card.css'
 /**
  * Surface container used by every module (stats, tables, forms, ...).
  */
-export default function Card({ title, description, actions, footer, padded = true, className, children }) {
+export default function Card({
+  title,
+  description,
+  actions,
+  footer,
+  padded = true,
+  compact = false,
+  className,
+  children,
+}) {
   return (
-    <section className={cn('card', padded && 'card--padded', className)}>
+    <section
+      className={cn('card', padded && 'card--padded', compact && 'card--compact', className)}
+    >
       {(title || actions) && (
         <header className="card__header">
           <div>

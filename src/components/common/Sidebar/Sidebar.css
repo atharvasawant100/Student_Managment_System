@@ -30,15 +30,15 @@
 
 .sidebar__brand-name {
   margin: 0;
-  font-size: 15px;
+  font-size: 13.5px;
   font-weight: 600;
   color: var(--text-h);
 }
 
 .sidebar__brand-portal {
   margin: 2px 0 0;
-  font-size: 12px;
-  letter-spacing: 0.4px;
+  font-size: 10.5px;
+  letter-spacing: 0.5px;
   text-transform: uppercase;
   color: var(--text);
 }
@@ -54,9 +54,9 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 9px 12px;
+  padding: 8px 10px;
   border-radius: 8px;
-  font-size: 15px;
+  font-size: 13.5px;
   color: var(--text);
   text-decoration: none;
   transition:
@@ -87,10 +87,10 @@
 .sidebar__avatar {
   display: grid;
   place-items: center;
-  width: 32px;
-  height: 32px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 600;
   color: var(--accent);
   background: var(--accent-bg);
@@ -110,12 +110,12 @@
 }
 
 .sidebar__footer-name {
-  font-size: 14px;
+  font-size: 12.5px;
   font-weight: 500;
   color: var(--text-h);
 }
 
 .sidebar__footer-role {
-  font-size: 12px;
+  font-size: 10.5px;
   color: var(--text);
 }

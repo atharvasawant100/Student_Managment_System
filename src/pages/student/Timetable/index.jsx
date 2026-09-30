@@ -2,14 +2,8 @@ import ModulePlaceholder from '../../../components/common/ModulePlaceholder'
 
 /**
  * Student portal - Timetable.
- * Module body is intentionally empty; routing and layout are already wired.
+ * Rendered inside <StudentLayout /> via <Outlet />; body not implemented yet.
  */
 export default function Timetable() {
-  return (
-    <ModulePlaceholder
-      portal="Student portal"
-      title="Timetable"
-      subtitle="Weekly class schedule with subjects, timings and faculty."
-    />
-  )
+  return <ModulePlaceholder portal="Student portal" />
 }

@@ -2,14 +2,8 @@ import ModulePlaceholder from '../../../components/common/ModulePlaceholder'
 
 /**
  * Student portal - Profile.
- * Module body is intentionally empty; routing and layout are already wired.
+ * Rendered inside <StudentLayout /> via <Outlet />; body not implemented yet.
  */
 export default function Profile() {
-  return (
-    <ModulePlaceholder
-      portal="Student portal"
-      title="Profile"
-      subtitle="Personal, contact and academic details."
-    />
-  )
+  return <ModulePlaceholder portal="Student portal" />
 }

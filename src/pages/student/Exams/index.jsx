@@ -2,14 +2,8 @@ import ModulePlaceholder from '../../../components/common/ModulePlaceholder'
 
 /**
  * Student portal - Exams.
- * Module body is intentionally empty; routing and layout are already wired.
+ * Rendered inside <StudentLayout /> via <Outlet />; body not implemented yet.
  */
 export default function Exams() {
-  return (
-    <ModulePlaceholder
-      portal="Student portal"
-      title="Exams"
-      subtitle="Exam schedule, syllabus and result summary."
-    />
-  )
+  return <ModulePlaceholder portal="Student portal" />
 }

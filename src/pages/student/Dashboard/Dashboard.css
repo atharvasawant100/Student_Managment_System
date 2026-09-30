@@ -1,0 +1,79 @@
+.dashboard {
+  gap: 16px;
+}
+
+/* KPI row */
+.dashboard__stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+/* Panel rows */
+.dashboard__grid {
+  display: grid;
+  gap: 16px;
+}
+
+.dashboard__grid--three {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.dashboard__grid--two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.dashboard__due {
+  color: var(--danger);
+}
+
+/* Weekly timetable: day + subject + time stacked next to the status pill */
+.dashboard__slot {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.dashboard__slot-day {
+  width: 26px;
+  flex-shrink: 0;
+  font-size: 11.5px;
+  color: var(--text);
+}
+
+.dashboard__slot-title {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-h);
+}
+
+.dashboard__slot-time {
+  display: block;
+  margin-top: 1px;
+  font-size: 11px;
+  color: var(--text);
+}
+
+@media (max-width: 1280px) {
+  .dashboard__stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .dashboard__grid--three {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 1024px) {
+  .dashboard__grid--three,
+  .dashboard__grid--two {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .dashboard__stats {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

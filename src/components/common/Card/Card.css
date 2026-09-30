@@ -12,6 +12,22 @@
   padding: 20px;
 }
 
+/* Dense variant used by dashboard panels / KPI cards */
+.card--compact {
+  gap: 12px;
+  padding: 15px 16px;
+  border-radius: 11px;
+}
+
+.card--compact .card__title {
+  font-size: 13.5px;
+  letter-spacing: -0.1px;
+}
+
+.card--compact .card__body {
+  gap: 10px;
+}
+
 .card__header {
   display: flex;
   align-items: flex-start;
@@ -37,6 +53,18 @@
   display: flex;
   align-items: center;
   gap: 8px;
+}
+
+/* "View all" style link used in panel headers */
+.card__action-link {
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.card__action-link:hover {
+  text-decoration: underline;
 }
 
 .card__body {

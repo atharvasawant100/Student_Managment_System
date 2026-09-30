@@ -1,0 +1,51 @@
+.stat-card {
+  gap: 12px;
+}
+
+.stat-card__head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.stat-card__label {
+  margin: 0;
+  font-size: 12.5px;
+  color: var(--text);
+}
+
+.stat-card__figures {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.stat-card__value {
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -0.6px;
+  color: var(--text-h);
+}
+
+.stat-card__hint {
+  font-size: 11.5px;
+  white-space: nowrap;
+}
+
+.stat-card__hint--success {
+  color: var(--success);
+}
+
+.stat-card__hint--warning {
+  color: var(--warning);
+}
+
+.stat-card__hint--danger {
+  color: var(--danger);
+}
+
+.stat-card__hint--neutral {
+  color: var(--text);
+}

@@ -1,6 +1,7 @@
 import { NavLink } from 'react-router-dom'
 import Icon from '../Icon/index.jsx'
 import { APP_NAME } from '../../../utils/constants.js'
+import { getInitials } from '../../../utils/string.js'
 import cn from '../../../utils/cn.js'
 import './Sidebar.css'
 
@@ -39,7 +40,7 @@ export default function Sidebar({ navItems, portalLabel, user, onNavigate }) {
 
       <div className="sidebar__footer">
         <span className="sidebar__avatar" aria-hidden="true">
-          {user?.name?.charAt(0) ?? portalLabel.charAt(0)}
+          {getInitials(user?.name ?? portalLabel)}
         </span>
         <div className="sidebar__footer-text">
           <p className="sidebar__footer-name">{user?.name ?? 'Not signed in'}</p>

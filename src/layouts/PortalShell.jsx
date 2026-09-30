@@ -7,16 +7,38 @@ import cn from '../utils/cn.js'
 import './PortalShell.css'
 
 /**
- * Shared application chrome for both portals: sidebar column, topbar and the
- * scrollable content region.
+ * Default header used by a portal that does not supply its own yet.
+ * (The teacher portal still renders this until <TeacherHeader /> exists.)
+ */
+function PortalTopbar({ portalLabel }) {
+  const { user, signOut } = useAuth()
+
+  return (
+    <>
+      <p className="portal-topbar__label">{portalLabel}</p>
+
+      <div className="portal-topbar__user">
+        <span className="portal-topbar__name">{user?.name ?? 'Guest'}</span>
+        {user && (
+          <Button size="sm" variant="ghost" onClick={signOut}>
+            Sign out
+          </Button>
+        )}
+      </div>
+    </>
+  )
+}
+
+/**
+ * Shared application chrome for both portals: sidebar column, top header and
+ * the content region that renders `<Outlet />`.
  *
  * It contains no student/teacher specific logic - `StudentLayout` and
- * `TeacherLayout` pass their own sidebar in and render their `<Outlet />` as
- * children, so the shell persists while the page content changes.
+ * `TeacherLayout` pass their own sidebar and header in, so the shell persists
+ * while only the page content changes.
  */
-export default function PortalShell({ portalLabel, sidebar, children }) {
+export default function PortalShell({ portalLabel, sidebar, header, children }) {
   const [sidebarOpen, { toggle: toggleSidebar, setFalse: closeSidebar }] = useToggle(false)
-  const { user, signOut } = useAuth()
 
   // The portal-specific sidebar receives the close handler automatically, so
   // tapping a link collapses the off-canvas menu on small screens.
@@ -49,16 +71,7 @@ export default function PortalShell({ portalLabel, sidebar, children }) {
             <Icon name={sidebarOpen ? 'close' : 'menu'} size={20} />
           </button>
 
-          <p className="portal-topbar__label">{portalLabel}</p>
-
-          <div className="portal-topbar__user">
-            <span className="portal-topbar__name">{user?.name ?? 'Guest'}</span>
-            {user && (
-              <Button size="sm" variant="ghost" onClick={signOut}>
-                Sign out
-              </Button>
-            )}
-          </div>
+          {header ?? <PortalTopbar portalLabel={portalLabel} />}
         </header>
 
         <main className="portal-main">{children}</main>

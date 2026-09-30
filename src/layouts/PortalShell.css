@@ -1,23 +1,28 @@
 .portal-shell {
   display: grid;
-  grid-template-columns: 264px minmax(0, 1fr);
+  grid-template-columns: var(--sidebar-width) minmax(0, 1fr);
   min-height: 100svh;
   text-align: left;
+  background: var(--content-bg);
 }
 
+/* Fixed left column */
 .portal-sidebar {
   position: sticky;
   top: 0;
   height: 100svh;
+  background: var(--surface);
   border-right: 1px solid var(--border);
 }
 
+/* Remaining screen width */
 .portal-content {
   display: flex;
   flex-direction: column;
   min-width: 0;
 }
 
+/* Header spans the full width of the main area */
 .portal-topbar {
   position: sticky;
   top: 0;
@@ -25,9 +30,10 @@
   display: flex;
   align-items: center;
   gap: 16px;
-  padding: 12px 24px;
-  border-bottom: 1px solid var(--border);
+  min-height: var(--header-height);
+  padding: 10px 28px;
   background: var(--surface);
+  border-bottom: 1px solid var(--border);
 }
 
 .portal-topbar__menu {
@@ -60,15 +66,18 @@
   color: var(--text);
 }
 
+/* Content sits below the header */
 .portal-main {
   flex: 1;
-  padding: 24px;
+  padding: 24px 28px 40px;
+  background: var(--content-bg);
 }
 
 .portal-backdrop {
   display: none;
 }
 
+/* Tablet / mobile: sidebar becomes an off-canvas drawer */
 @media (max-width: 1024px) {
   .portal-shell {
     grid-template-columns: minmax(0, 1fr);
@@ -78,13 +87,14 @@
     position: fixed;
     inset: 0 auto 0 0;
     z-index: 40;
-    width: 264px;
+    width: var(--sidebar-width);
     transform: translateX(-100%);
     transition: transform 0.22s ease;
   }
 
   .portal-shell--sidebar-open .portal-sidebar {
     transform: translateX(0);
+    box-shadow: var(--shadow);
   }
 
   .portal-shell--sidebar-open .portal-backdrop {
@@ -100,7 +110,11 @@
     display: inline-flex;
   }
 
+  .portal-topbar {
+    padding: 10px 16px;
+  }
+
   .portal-main {
-    padding: 20px 16px;
+    padding: 18px 16px 32px;
   }
 }

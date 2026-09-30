@@ -1,6 +1,6 @@
 import { useCallback, useMemo, useState } from 'react'
 import { AuthContext } from './AuthContext.js'
-import { ROLES, STORAGE_KEYS } from '../utils/constants.js'
+import { DEMO_USERS, STORAGE_KEYS } from '../utils/constants.js'
 
 /**
  * Temporary authentication provider.
@@ -16,16 +16,7 @@ export function AuthProvider({ children, initialUser = null }) {
   const [user, setUser] = useState(initialUser)
 
   const signInAs = useCallback((role) => {
-    if (!role) {
-      setUser(null)
-      return null
-    }
-
-    const nextUser = {
-      id: `dev-${role}`,
-      name: role === ROLES.TEACHER ? 'Demo Teacher' : 'Demo Student',
-      role,
-    }
+    const nextUser = role ? DEMO_USERS[role] ?? null : null
 
     setUser(nextUser)
     return nextUser

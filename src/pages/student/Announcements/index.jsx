@@ -2,14 +2,8 @@ import ModulePlaceholder from '../../../components/common/ModulePlaceholder'
 
 /**
  * Student portal - Announcements.
- * Module body is intentionally empty; routing and layout are already wired.
+ * Rendered inside <StudentLayout /> via <Outlet />; body not implemented yet.
  */
 export default function Announcements() {
-  return (
-    <ModulePlaceholder
-      portal="Student portal"
-      title="Announcements"
-      subtitle="Notices published by teachers and the institute."
-    />
-  )
+  return <ModulePlaceholder portal="Student portal" />
 }

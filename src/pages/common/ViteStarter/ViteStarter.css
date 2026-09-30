@@ -36,6 +36,45 @@
   }
 }
 
+/*
+ * Typography of the starter screen, scoped here when the app switched to a
+ * compact 15px base in src/index.css.
+ */
+.starter-page h1,
+.starter-page h2 {
+  font-family: var(--heading);
+  font-weight: 500;
+  color: var(--text-h);
+}
+
+.starter-page h1 {
+  font-size: 56px;
+  letter-spacing: -1.68px;
+  margin: 32px 0;
+}
+
+.starter-page h2 {
+  font-size: 24px;
+  line-height: 118%;
+  letter-spacing: -0.24px;
+  margin: 0 0 8px;
+}
+
+.starter-page code {
+  font-size: 15px;
+}
+
+@media (max-width: 1024px) {
+  .starter-page h1 {
+    font-size: 36px;
+    margin: 20px 0;
+  }
+
+  .starter-page h2 {
+    font-size: 20px;
+  }
+}
+
 .hero {
   position: relative;
 
